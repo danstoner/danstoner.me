@@ -5,7 +5,7 @@
 
   console.log("IN document ready function");
 
-  $.getJSON("/static/danstoner_dailymile_running_entries_postETL_nokeys.json", function (data) {
+  $.getJSON("danstoner_dailymile_running_entries_postETL_nokeys.json", function (data) {
     console.log("got it");
 $('#entries-table').dynatable({
     dataset: {
