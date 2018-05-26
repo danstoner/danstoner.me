@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+
+        <link rel="stylesheet" href="css/normalize.min.css">
+        <link rel="stylesheet" href="css/main.css">
+
+        <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div class="header-container">
+            <header class="wrapper clearfix">
+                <h1 class="title">Dan Stoner's Favorite iDigBio Specimens</h1>
+<!--                <nav>
+                    <ul>
+                        <li><a href="#">nav ul li a</a></li>
+                        <li><a href="#">nav ul li a</a></li>
+                        <li><a href="#">nav ul li a</a></li>
+                    </ul>
+                </nav>
+-->
+            </header>
+        </div>
+
+        <div class="main-container">
+            <div class="main wrapper clearfix">
+
+                <article>
+                    <header>
+                        <h1>Some of my favorite iDigBio specimens</h1>
+                        <p>Also known as... playing with jQuery to access the iDigBio API.</p>
+			<p>(For more information, see <a href="https://www.idigbio.org/wiki/index.php/IDigBio_APIs">
+			https://www.idigbio.org/wiki/index.php/IDigBio_APIs</a>)
+                    </header>
+                    <section>
+                        <h3>Specimens</h3>
+
+                        <p>jquery should follow...</p>
+			<div id="images"></div>
+			<ul id="my-favs">
+			</ul>
+                    </section>
+<!--                    <section>
+                        <h2>article section h2</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales urna non odio egestas tempor. Nunc vel vehicula ante. Etiam bibendum iaculis libero, eget molestie nisl pharetra in. In semper consequat est, eu porta velit mollis nec. Curabitur posuere enim eget turpis feugiat tempor. Etiam ullamcorper lorem dapibus velit suscipit ultrices. Proin in est sed erat facilisis pharetra.</p>
+                    </section>
+-->
+<!--                    <footer>
+                        <h3>article footer h3</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales urna non odio egestas tempor. Nunc vel vehicula ante. Etiam bibendum iaculis libero, eget molestie nisl pharetra in. In semper consequat est, eu porta velit mollis nec. Curabitur posuere enim eget turpis feugiat tempor.</p>
+                    </footer>
+                </article>
+-->
+<!--                <aside>
+                    <h3>aside</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales urna non odio egestas tempor. Nunc vel vehicula ante. Etiam bibendum iaculis libero, eget molestie nisl pharetra in. In semper consequat est, eu porta velit mollis nec. Curabitur posuere enim eget turpis feugiat tempor. Etiam ullamcorper lorem dapibus velit suscipit ultrices.</p>
+                </aside>
+-->
+            </div> <!-- #main -->
+        </div> <!-- #main-container -->
+
+        <div class="footer-container">
+            <footer class="wrapper">
+                <h3></h3>
+            </footer>
+        </div>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
+
+        <script src="js/main.js"></script>
+
+<script>
+// here goes the stuff
+// https://www.idigbio.org/portal/view/mediarecords/06d82ce4-32ae-4a39-9b9c-d5b12358efde
+//  $( "li" ).appendTo( $( ".my-favs") );
+//
+//  Sample from http://ejohn.org/apps/workshop/intro/#29
+//$.getJSON("file.js", function( obj ) { 
+//    for ( var prop in obj ) { 
+//        $("ul").append( 
+//            "<li>" + prop + ": " + obj[prop] + "</li>"); 
+//    } 
+//});
+
+// // Pseudo code: given a list of specimen uuids, get the json, then for each media record add an image tag
+
+// use just one for now!
+var uuidlist = ( "06d82ce4-32ae-4a39-9b9c-d5b12358efde" );
+
+// $(my-favs).getJSON("http://api.idigbio.org/v2/mediarecords/{uuidlist}");
+
+var myjson = $.getJSON("http://api.idigbio.org/v2/mediarecords/06d82ce4-32ae-4a39-9b9c-d5b12358efde");
+// var myurl = myjson.parseJSON( '{ "": "  " }' );
+alert (myjson.ac.accessURI);
+// alert (getJSON("http://api.idigbio.org/v2/mediarecords/{uuidlist}"));
+</script>
+
+
+
+
+
+<!-- // Credit to http://blog.cleverswine.net/2012/11/01/thumbnail-gallery-with-flickr-bootstrap-and-javascript/ -->
+<!-- // -->
+<!-- // see the list of feeds here - http://www.flickr.com/services/feeds/ -->
+<!-- // this is a handy tool to get people and group ids - http://idgettr.com/ -->
+<!-- $(document).ready(function () { -->
+<!--     var flickrFeedUrl = "http://api.flickr.com/services/feeds/photos_public.gne?id=7702888@N03&lang=en-us&jsoncallback=?"; -->
+<!--     $.getJSON(flickrFeedUrl, { format: "json" }, -->
+<!--         function (data) { -->
+<!--             $.each(data.items, function (i, item) { -->
+ 
+<!--                 // build some elements and then append them accordingly -->
+<!--                 var li = $("<li>").attr("class", "span2"); -->
+<!--                 var a = $("<a>").attr("href", item.link).attr("class", "thumbnail").attr("title", item.title); -->
+<!--                 // we want the larger square (150px) thumbnail instead of the smaller one (75px) -->
+<!--                 var img = $("<img/>").attr("src", item.media.m.replace("_m.jpg", "_q.jpg")); -->
+<!--                 img.appendTo(a); -->
+<!--                 a.appendTo(li); -->
+<!--                 $("#my-photos").append(li); -->
+ 
+<!--                 // stop at 4 photos (i is 0 based) -->
+<!--                 if (i == 4) return false; -->
+<!--             }); -->
+<!--       }); -->
+<!-- }); -->
+
+<!-- (function() { -->
+<!--   var flickerAPI = "http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?"; -->
+<!--   $.getJSON( flickerAPI, { -->
+<!--     tags: "mount rainier", -->
+<!--     tagmode: "any", -->
+<!--     format: "json" -->
+<!--   }) -->
+<!--     .done(function( data ) { -->
+<!--       $.each( data.items, function( i, item ) { -->
+<!--         $( "<img>" ).attr( "src", item.media.m ).appendTo( "#images" ); -->
+<!--         if ( i === 3 ) { -->
+<!--           return false; -->
+<!--         } -->
+<!--       }); -->
+<!--     }); -->
+<!-- })(); -->
+
+<!-- $(document).ready(function(){ -->
+<!-- // jQuery code goes in here -->
+<!--   var flickerAPI = "http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?"; -->
+<!--   // $("jquerydemo").html("This is the jquerydemo string"); -->
+<!-- // $( "<p>", { -->
+<!-- //    "class": "jquerydemo", -->
+<!-- //    html.join( "This is the jquery demo string" ) -->
+<!-- //  }).appendTo( "body" ); -->
+<!-- //}); -->
+<!--   .done(function() { -->
+<!--   console.log (flickerAPI); -->
+<!-- )}; -->
+
+<!--   $.getJSON(flickerAPI, function( data) { -->
+<!--   var items = []; -->
+<!--   $.each ( data, function( key, val ) { -->
+<!--     items.push( "<li id='" + key + "'>" + val + "</li>" ); -->
+<!-- }); -->
+<!-- $( "<ul/>", { -->
+<!--     "class": "my-new-list", -->
+<!--     html: items.join( "" ) -->
+<!--   }).appendTo( "body" ); -->
+<!-- }); -->
+
+
+<!-- (function() { -->
+<!--   var flickerAPI = "http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?"; -->
+<!--   $.getJSON( flickerAPI, { -->
+<!--     tags: "mount rainier", -->
+<!--     tagmode: "any", -->
+<!--     format: "json" -->
+<!--   }) -->
+<!--     .done(function( data ) { -->
+<!--       $.each( data.items, function( i, item ) { -->
+<!--         $( "<img>" ).attr( "src", item.media.m ).appendTo( "#images" ); -->
+<!--         if ( i === 3 ) { -->
+<!--           return false; -->
+<!--         } -->
+<!--       }); -->
+<!--     }); -->
+<!-- })(); -->
+
+
+
+        <script>
+            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+            g.src='//www.google-analytics.com/ga.js';
+            s.parentNode.insertBefore(g,s)}(document,'script'));
+        </script>
+    </body>
+</html>
