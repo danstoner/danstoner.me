@@ -1,12 +1,9 @@
-  console.log("Hello World with no function!");
-
   $(document).ready(function() {
   // all custom jQuery will go here
 
-  console.log("IN document ready function");
 
   $.getJSON("danstoner_dailymile_running_entries_postETL_nokeys.json", function (data) {
-    console.log("got it");
+  //  console.log("got it");
 $('#entries-table').dynatable({
     dataset: {
 	   totalRecordCount: true,
@@ -21,6 +18,12 @@ $('#entries-table').dynatable({
 	},
     table: {
 	defaultColumnIdStyle: 'underscore'
+    },
+    inputs: {
+    searchPlacement: 'before',
+    perPagePlacement: 'before',
+    paginationLinkPlacement: 'before',
+    recordCountPlacement: 'before'
     }
 })
 
